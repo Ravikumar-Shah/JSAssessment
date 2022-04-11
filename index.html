@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <!-- Setting up stylesheet and javascript for the player -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="main">
+        <div class="now-playing">PLAYING x OF y</div>
+        <!-- album cover -->
+        <img id="trackImage" height="250px" width="338px" alt="album cover"/>
+        <!-- song title -->
+        <p id="title">title.mp3</p>
+        <p id="artist">artist name</p>
+
+        <!-- Song controls -->
+        <div class="middle">
+            <button onclick="previousSong()" id="pre">
+                <i class="fa fa-step-backward fa-2x" aria-hidden="true"></i>
+            </button>
+            <button onclick="checkSong()" id="play">
+                <i class="fa fa-play-circle fa-4x" aria-hidden="true"></i>
+            </button>
+            <button onclick="nextSong()" id="next">
+                <i class = "fa fa-step-forward fa-2x" aria-hidden="true"></i>
+            </button>
+        </div>
+        <!-- Sliders -->
+        <div class="duration">
+            <input type="range" min="0" max="100" value="0" id="durationSlider" onchange="changeDuration()">
+        </div>
+        <div class="volumebar">
+            <i class="fa fa-volume-down" aria-hidden="true" id="volume_icon" onclick="muteSound()"></i>
+            <input type="range" min="0" max="100" value="90" onchange="volumeChange()" id="volume" />
+            <i class="fa fa-volume-up" aria-hidden="true" id="volume_icon" onclick="muteSound()"></i>
+        </div>
+    </div>
+    
+</body>
+</html>
